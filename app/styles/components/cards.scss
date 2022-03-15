@@ -1,4 +1,4 @@
-.card-container {
+.c-card-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1rem;
@@ -8,19 +8,24 @@
     }  
 }
 
-.card {
-    border-radius: 30px;
+.c-card {
+    border-radius: 30px; 
     color: #fff;
     overflow: hidden;
     font-family: Montserrat, Arial, Helvetica, sans-serif;
 
     &__header {
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 3rem 0 4rem 0;
-        background-image: linear-gradient(to bottom, rgba(243, 114, 114, 0.95), rgba(189, 46, 100, 0.95)), url(https://us.123rf.com/450wm/skazz/skazz2006/skazz200600072/148715411-cholatse-mountain-peak-view-from-dzongla-village-in-a-morning-himalaya-mountains-range-in-everest-ba.jpg?ver=6);
+        background-image: linear-gradient(to bottom, rgba(243, 114, 114, 0.95), rgba(230, 18, 106, 0.9)), url(https://us.123rf.com/450wm/skazz/skazz2006/skazz200600072/148715411-cholatse-mountain-peak-view-from-dzongla-village-in-a-morning-himalaya-mountains-range-in-everest-ba.jpg?ver=6);
         background-size: cover;
+    }
+
+    &__avatar-area {
+        position: relative;
     }
 
     &__avatar {
@@ -28,6 +33,19 @@
         border-radius: 1.5rem;
         margin-bottom: 1rem;
         box-shadow: 0 1rem 0.7rem rgba(0, 0, 0, 0.3);
+    }
+
+    &__verified {
+        position: absolute;
+        bottom: 1.8rem;
+        right: -0.5rem;
+        border-radius: 50%;
+        background-color: #fff;
+        color: #e6126a;
+        padding: 0.4rem 0.4rem;
+        display: flex;
+        font-size: 0.7rem;
+        box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.5);
     }
 
     &__heading {
@@ -52,19 +70,28 @@
         background-color: rgba(0, 0, 0, 0.3);
     }
 
+    &__close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+
     &__body {
-        padding: 0 0 1rem 0;
+        position: relative;
+        padding: 3rem 0 1rem 0;
         background-color: #2c2c2c;
     }
 
     &__overlap-tray {
-        position: relative;
+        position: absolute;
         top: -3rem;
+        left: 0;
+        right: 0;
+        margin: auto;
         display: grid;
         grid-template-columns: 1fr 1fr;
         padding: 1.5rem 3.5rem;
         width: 70%;
-        margin: auto;
         background-color: #363636;
         border-radius: 15px;
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -106,7 +133,6 @@
     }
 
     &__details {
-        margin-top: -1rem;
         padding: 0 2.5rem;
 
         &__heading {
