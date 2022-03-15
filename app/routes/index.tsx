@@ -1,32 +1,19 @@
+import { json, useLoaderData } from "remix";
+
+export async function loader() {
+    const res = await fetch(
+        "https://6221e286666291106a161556.mockapi.io/api/osc/getMockLeads/leads"
+    );
+    return json(await res.json());
+}
+
 export default function Index() {
-  return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-    </div>
-  );
+    const leads = useLoaderData();
+    return (
+        <div>
+            {leads.map((lead: any) => (
+                <div>{lead.name}</div>
+            ))}
+        </div>
+    );
 }
