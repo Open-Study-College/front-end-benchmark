@@ -53,6 +53,17 @@ export default function Index() {
                                 </h3>
                             </div>
                         </div>
+
+                        <div className="card__details">
+                            <h4 className="card__details__heading">Contact Details</h4>
+                            <p className="card__details__text">Email: {lead.email}</p>
+                            <p className="card__details__text">Tel: {lead.telephone}</p>
+                        </div>
+
+                        <div className="card__details">
+                            <h4 className="card__details__heading">About Me</h4>
+                            <p className="card__details__text">{lead.profile_description}</p>
+                        </div>
                     </div>
                 </div>
             ))}

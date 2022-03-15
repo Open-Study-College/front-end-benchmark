@@ -39,21 +39,22 @@
     &__sub-heading {
         font-size: 0.8rem;
         text-transform: uppercase;
-        letter-spacing: 0.1rem;
+        letter-spacing: 0.2rem;
         margin: 0.3rem 0 0.8rem 0;
     }
 
     &__id {
+        font-size: 0.8rem;
         border: solid #fff 2px;
-        border-radius: 15px;
+        border-radius: 20px;
         padding: 0.4rem 0.8rem;
         opacity: 0.8;
         background-color: rgba(0, 0, 0, 0.3);
     }
 
     &__body {
-        min-height: 150px;
-        background-color: #000;
+        padding: 0 0 1rem 0;
+        background-color: #2c2c2c;
     }
 
     &__overlap-tray {
@@ -61,31 +62,74 @@
         top: -3rem;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 1rem;
-        padding: 2rem 4rem;
+        padding: 1.5rem 3.5rem;
         width: 70%;
         margin: auto;
         background-color: #363636;
         border-radius: 15px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+
+        @media (max-width: 992px) {
+            top: -2rem;
+            padding: 1rem 0.5rem;
+            width: 80%;
+        }  
 
         &--half {
             text-align: center;
 
             & + & {
-                border-left: 1px solid rgba(255, 255, 255, 0.5);
+                border-left: 2px solid #3d3d3d;
             }
         }
 
         &__heading {
-            margin: 0;
+            margin: 0 0 0.3rem 0;
             font-size: 1.2rem;
+
+            @media (max-width: 992px) {
+                font-size: 1rem;
+            }  
         }
 
         &__sub-heading {
             margin: 0;
             font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.1rem;
             text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+
+            @media (max-width: 992px) {
+                font-size: 0.5rem;
+            }  
+        }
+    }
+
+    &__details {
+        margin-top: -1rem;
+        padding: 0 2.5rem;
+
+        &__heading {
+            margin: 0;
+            font-size: 0.8rem;
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        &__text {
+            margin: 0;
+            font-size: 0.8rem;
+            line-height: 1.2rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 3;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+        }
+
+        & + & {
+            margin-top: 1rem;
         }
     }
 }
