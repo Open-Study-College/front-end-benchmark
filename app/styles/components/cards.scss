@@ -12,28 +12,32 @@
     border-radius: 30px;
     color: #fff;
     overflow: hidden;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
 
     &__header {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 3rem 0;
-        background-image: linear-gradient(#f37272, #bd2e64);
+        padding: 3rem 0 4rem 0;
+        background-image: linear-gradient(to bottom, rgba(243, 114, 114, 0.95), rgba(189, 46, 100, 0.95)), url(https://us.123rf.com/450wm/skazz/skazz2006/skazz200600072/148715411-cholatse-mountain-peak-view-from-dzongla-village-in-a-morning-himalaya-mountains-range-in-everest-ba.jpg?ver=6);
+        background-size: cover;
     }
 
     &__avatar {
-        width:5rem;
+        width: 5rem;
         border-radius: 1.5rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 1rem 0.7rem rgba(0, 0, 0, 0.3);
     }
 
     &__heading {
-        font-size: 2rem;
+        font-size: 1.5rem;
         margin: 0;
+        text-align: center;
     }
 
     &__sub-heading {
-        font-size: 1rem;
+        font-size: 0.8rem;
         text-transform: uppercase;
         letter-spacing: 0.1rem;
         margin: 0.3rem 0 0.8rem 0;
@@ -50,5 +54,38 @@
     &__body {
         min-height: 150px;
         background-color: #000;
+    }
+
+    &__overlap-tray {
+        position: relative;
+        top: -3rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+        padding: 2rem 4rem;
+        width: 70%;
+        margin: auto;
+        background-color: #363636;
+        border-radius: 15px;
+
+        &--half {
+            text-align: center;
+
+            & + & {
+                border-left: 1px solid rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        &__heading {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        &__sub-heading {
+            margin: 0;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+        }
     }
 }

@@ -32,9 +32,28 @@ export default function Index() {
                         />
                         <h1 className="card__heading">{lead.name}</h1>
                         <h2 className="card__sub-heading">{lead.title}</h2>
-                        <div className="card__id">ID: 1234{lead.id}</div>
+                        <div className="card__id">ID: {lead.student_id}</div>
                     </div>
-                    <div className="card__body"></div>
+                    <div className="card__body">
+                        <div className="card__overlap-tray">
+                            <div className="card__overlap-tray--half">
+                                <h3 className="card__overlap-tray__heading">
+                                    {lead.enrolment_status}
+                                </h3>
+                                <h3 className="card__overlap-tray__sub-heading">
+                                    Enrolment Status
+                                </h3>
+                            </div>
+                            <div className="card__overlap-tray--half">
+                                <h3 className="card__overlap-tray__heading">
+                                    {lead.completed_courses}
+                                </h3>
+                                <h3 className="card__overlap-tray__sub-heading">
+                                    Completed Courses
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             ))}
         </div>
