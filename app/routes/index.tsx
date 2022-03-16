@@ -72,6 +72,20 @@ export default function Index() {
                             <h4 className="c-card__details__heading">About Me</h4>
                             <p className="c-card__details__text">{lead.profile_description}</p>
                         </div>
+
+                        <div className="c-card__toggle">
+                            <span className="c-card__toggle-icon">
+                                <FontAwesomeIcon icon={faGraduationCap} />
+                            </span>
+                            <div className="c-card__toggle-heading-area">
+                                <h3 className="c-card__toggle-heading">Current Course:</h3>
+                                <h4 className="c-card__toggle-sub-heading">{lead.course_title}</h4>
+                            </div>
+                            <FontAwesomeIcon
+                                icon={faChevronRight}
+                                className="c-card__toggle-chevron"
+                            />
+                        </div>
                     </div>
                 </div>
             ))}
