@@ -9,7 +9,7 @@
 }
 
 .c-card {
-    border-radius: 30px; 
+    border-radius: 1.5rem 1.5rem 0 0; 
     color: #fff;
     overflow: hidden;
     font-family: Montserrat, Arial, Helvetica, sans-serif;
@@ -39,12 +39,12 @@
         position: absolute;
         bottom: 1.8rem;
         right: -0.5rem;
-        border-radius: 50%;
-        background-color: #fff;
-        color: #e6126a;
         padding: 0.4rem 0.4rem;
         display: flex;
         font-size: 0.7rem;
+        border-radius: 50%;
+        background-color: #fff;
+        color: #e6126a;
         box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.5);
     }
 
@@ -78,8 +78,12 @@
 
     &__body {
         position: relative;
-        padding: 3rem 0 1rem 0;
+        padding: 4rem 0 0 0;
         background-color: #2c2c2c;
+
+        @media (max-width: 992px) {
+            padding-top: 3rem; 
+        }
     }
 
     &__overlap-tray {
@@ -115,7 +119,7 @@
             font-size: 1.2rem;
 
             @media (max-width: 992px) {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }  
         }
 
