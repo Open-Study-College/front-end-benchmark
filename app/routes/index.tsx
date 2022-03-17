@@ -31,7 +31,7 @@ export default function Index() {
                         <div className="c-card__avatar-area">
                             <img
                                 className="c-card__avatar"
-                                src={lead.avatar}
+                                src={lead.avatar + "?" + lead.id}
                                 alt={"Avatar of " + lead.name}
                             />
                             <div className="c-card__verified">
@@ -74,17 +74,42 @@ export default function Index() {
                         </div>
 
                         <div className="c-card__toggle">
-                            <span className="c-card__toggle-icon">
-                                <FontAwesomeIcon icon={faGraduationCap} />
-                            </span>
-                            <div className="c-card__toggle-heading-area">
-                                <h3 className="c-card__toggle-heading">Current Course:</h3>
-                                <h4 className="c-card__toggle-sub-heading">{lead.course_title}</h4>
+                            <div className="c-card__toggle-header">
+                                <span className="c-card__toggle-icon">
+                                    <FontAwesomeIcon icon={faGraduationCap} />
+                                </span>
+                                <div>
+                                    <h3 className="c-card__toggle-heading">Current Course:</h3>
+                                    <h4 className="c-card__toggle-sub-heading">
+                                        {lead.course_title}
+                                    </h4>
+                                </div>
+                                <FontAwesomeIcon
+                                    icon={faChevronRight}
+                                    className="c-card__toggle-chevron"
+                                />
                             </div>
-                            <FontAwesomeIcon
-                                icon={faChevronRight}
-                                className="c-card__toggle-chevron"
-                            />
+                            <div className="c-card__toggle-body">Hello</div>
+                        </div>
+
+                        <div className="c-card__toggle is-open">
+                            <div className="c-card__toggle-header">
+                                <h3 className="c-card__toggle-heading">My Photos</h3>
+                                <FontAwesomeIcon
+                                    icon={faChevronRight}
+                                    className="c-card__toggle-chevron"
+                                />
+                            </div>
+
+                            <div className="c-card__toggle-body">
+                                <div className="c-card__gallery">
+                                    {lead.images.map((image: string, key: number) => (
+                                        <div className="c-card__gallery__img">
+                                            <img src={image + "?" + lead.student_id + key} />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
